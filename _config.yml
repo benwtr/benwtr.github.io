@@ -1,0 +1,17 @@
+
+# Site setting
+title: highlyfragileinfrastructure
+#email: ben at nope dot nope
+description: > # this means to ignore newlines until "baseurl:"
+  DevOps stuff and things
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://highly.fragileinfrastructure.com"
+twitter_username: benwtr
+github_username:  benwtr
+
+# Build settings
+gems: ["jekyll-gist"]
+
+markdown: redcarpet
+
+
