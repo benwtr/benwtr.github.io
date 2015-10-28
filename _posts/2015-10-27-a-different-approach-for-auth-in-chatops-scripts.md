@@ -36,7 +36,7 @@ Some advantages of this approach:
 -   no need to create a 'bot user' on the external services.
 
 -   logs/history outside bot/chat show correct user information - This in
-    your logs: "**bob** ran job _deploy to prod_ 2 hours ago" instead of this:
+    your logs: "**alice** ran job _deploy to prod_ 2 hours ago" instead of this:
     "**hubot-user** ran job _deploy to prod_ 2 hours ago".
 
 I mentioned before that there's more than one way to have users set up
@@ -49,22 +49,22 @@ flow to users in the chat:
 It works like this:
 
 ```
-<bob> @hubot t setupauth
+<alice> @hubot t setupauth
 <hubot> https://api.twitter.com/oauth/authorize?oauth_token=DbdrwwAAAAAAiRcdAAABUKsq4I4
 ```
 
-_Bob clicks on the URL, twitter asks for authorization then presents a PIN code:
+_Alice clicks on the URL, twitter asks for authorization then presents a PIN code:
 748256_
 
 ```
-<bob> @hubot t auth 748256
+<alice> @hubot t auth 748256
 <hubot> You have authenticated
 ```
 
-_Now Bob can search.._
+_Now Alice can search.._
 
 ```
-<bob> @hubot t search foo
+<alice> @hubot t search foo
 <hubot> Tue Oct 27 21:20:59 +0000 2015 @Foo<sub>Foo</sub><sub>Fati</sub>: RT @Bonnaroo: "Happiness does not depend on what you have or who you are. It solely relies on what you think." - Buddha #radiatepositivity
 <hubot> Tue Oct 27 21:20:52 +0000 2015 @trappinbri69: @ArielleAguilar why you mad foo
 <hubot> Tue Oct 27 21:20:22 +0000 2015 @Foo<sub>Foo</sub><sub>Fati</sub>: RT @LukeAdams95: "Tonight, I'm making what my girlfriend has always said she's wanted for dinner." <https://t.co/sle9j8T9Gw>
@@ -74,14 +74,15 @@ _Now Bob can search.._
 _Or Tweet using his own twitter account.._
 
 ```
-<bob> @hubot t tweet I am tweeting through a hubot script yay
+<alice> @hubot t tweet I am tweeting through a hubot script yay
 ```
 
-It should be trivial to change this script to use a web based OAuth flow. You
-would need to use Hubot's HTTP listener and set up the twitter app to redirect
-the user to the listener instead of the step where the user sends the PIN to the
-bot. It might also be worthwhile to have it run `setupRequestToken()` if an API
-call fails with an unauthenticated status.
+It should be fairly trivial to change this script to use a web based OAuth flow.
+You would need to use Hubot's HTTP listener and set up the twitter app to
+redirect the user to the listener instead of the step where the user sends the
+PIN to the bot. It might also be worthwhile to have it run `setupRequestToken()`
+if an API call fails with an unauthenticated status, so the bot just spits out a
+URL and tells the user to enter a PIN if it needs to.
 
 Another example:
 [https://github.com/benwtr/hubot-jenkins-userauth/blob/master/src/hubot-jenkins-userauth.coffee](hubot-jenkins-userauth.coffee)
