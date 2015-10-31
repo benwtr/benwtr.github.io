@@ -29,7 +29,7 @@ Some advantages of this approach:
 -   no need to worry about authorization in the bot.
 
 -   no need to manage another source of truth for authorization. eg:
-    [https://github.com/hubot-scripts/hubot-auth](hubot-auth)
+    [hubot-auth](https://github.com/hubot-scripts/hubot-auth)
 
 -   authentication and authorization on external services Just Works™.
 
@@ -85,12 +85,11 @@ if an API call fails with an unauthenticated status, so the bot just spits out a
 URL and tells the user to enter a PIN if it needs to.
 
 Another example:
-[https://github.com/benwtr/hubot-jenkins-userauth/blob/master/src/hubot-jenkins-userauth.coffee](hubot-jenkins-userauth.coffee)
+[hubot-jenkins-userauth.coffee](https://github.com/benwtr/hubot-jenkins-userauth/blob/master/src/hubot-jenkins-userauth.coffee)
 In this fork of the community hubot-jenkins script, users can store their
 Jenkins API key in the Hubot brain and have Hubot perform actions as their _user
 instead of as a bot user_. In case the contents of the brain are exposed, the
 keys are encrypted using a secret stored in an environment variable.
 
-The end.
 
 
