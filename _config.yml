@@ -9,7 +9,8 @@ url: "http://adorably.fragileinfrastructure.com"
 twitter_username: benwtr
 github_username:  benwtr
 
-# Build settings
+exclude: [ "Gemfile", "Gemfile.lock", "CNAME" ]
+
 gems: ["jekyll-gist"]
 
 markdown: redcarpet

@@ -1,3 +1,23 @@
+<script type="text/javascript">
+  function setup() {
+    var w = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('width'));
+    var h = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('height'));
+    var p5Canvas = createCanvas(w, h);
+    p5Canvas.parent('site-header-animation');
+    textAlign(CENTER);
+    textSize(100);
+    for (var i = 0; i < 20; i++) {
+      push();
+      var c = random(64) + 192;
+      fill(c, c, c);
+      translate(random(width), random(height));
+      rotate(random(2 * PI));
+      text('adorably.fragileinfrastructure', 0, 0);
+      pop();
+    }
+  }
+</script>
+
 <footer class="site-footer">
 
   <div class="wrapper">
