@@ -1,14 +1,30 @@
 <script type="text/javascript">
+
+  var w;
+  var h;
+  var p5Canvas;
+
   function setup() {
-    var w = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('width'));
-    var h = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('height'));
-    var p5Canvas = createCanvas(w, h);
+    w = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('width'));
+    h = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('height'));
+    p5Canvas = createCanvas(w, h);
     p5Canvas.parent('site-header-animation');
+    renderBackground();
+  }
+
+  function windowResized() {
+    w = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('width'));
+    h = parseInt(getComputedStyle(document.getElementById("site-header-animation")).getPropertyValue('height'));
+    resizeCanvas(w, h);
+    renderBackground();
+  }
+
+  function renderBackground() {
     textAlign(CENTER);
-    textSize(100);
+    textSize(random(75,125));
     for (var i = 0; i < 20; i++) {
       push();
-      var c = random(64) + 192;
+      var c = random(191, 255);
       fill(c, c, c);
       translate(random(width), random(height));
       rotate(random(2 * PI));
@@ -16,6 +32,7 @@
       pop();
     }
   }
+
 </script>
 
 <footer class="site-footer">
