@@ -3,7 +3,7 @@
 title: adorablyfragileinfrastructure
 #email: ben at nope dot nope
 description: > # this means to ignore newlines until "baseurl:"
-  DevOps stuff and things
+  stuffer of things, thinger of stuffs
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://adorably.fragileinfrastructure.com"
 twitter_username: benwtr
@@ -14,5 +14,3 @@ exclude: [ "Gemfile", "Gemfile.lock", "CNAME" ]
 gems: ["jekyll-gist"]
 
 markdown: redcarpet
-
-
